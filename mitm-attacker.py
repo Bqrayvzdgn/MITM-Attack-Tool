@@ -52,14 +52,14 @@ if __name__ == "__main__":
             arp_poisoning(targetIP, poisonIP)
             arp_poisoning(poisonIP, targetIP)
             number += 1
-            print(f"\rPackages are being sent from address {targetIP} to address {poisonIP}. " + f"Number of packages {str(number)}", end="")
+            print(f"\n\rPackages are being sent from address {targetIP} to address {poisonIP}. " + f"Number of packages {str(number)}", end="")
             time.sleep(3)
     except KeyboardInterrupt:
         print("\n\nEverything is being restored to its former state.")
         reset_operation(targetIP, poisonIP)
         reset_operation(poisonIP, targetIP)
         print("Exiting.")
-        time.sleep(3)
+        time.sleep(2)
     finally:
         print(Banners.QUIT)
 else:
