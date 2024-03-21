@@ -70,7 +70,7 @@ if __name__ == "__main__":
             arp_poisoning(poisonIP, targetIP)
             """
             number += 1
-            print(f"\rPackages are being sent from address {user_target_ip} to address {user_gateway_ip}. ", end="")
+            print(f"\rPackages are being sent from address {user_target_ip} to address {user_gateway_ip}", end="")
             print(str(number))
             time.sleep(3)
     except KeyboardInterrupt:
