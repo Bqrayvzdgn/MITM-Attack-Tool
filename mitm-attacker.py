@@ -47,7 +47,7 @@ def get_user_input():
     parse_object.add_option("-g","--gateway",dest="gateway_ip",help="Enter Gateway IP")
     options = parse_object.parse_args()[0]
     if not options.target_ip:
-        print("Please enter a target ip")
+        print("Error : Please enter a target ip")
     if not options.gateway_ip:
         print("Error : Please enter a gateway ip")
     return options
@@ -56,19 +56,30 @@ if __name__ == "__main__":
     number = 0
     print(Banners.LOGO)
     print("This application was developed by bqrdev.\n")
+    """
     targetIP = input(str("Enter target IP: "))
     poisonIP = input(str("Enter the IP to poison (Modem, Router): "))
+    """
+    user_ips = get_user_input()
+    user_target_ip = user_ips.target_ip
+    user_gateway_ip = user_ips.gateway_ip
     try:
         while True:
+            """
             arp_poisoning(targetIP, poisonIP)
             arp_poisoning(poisonIP, targetIP)
+            """
             number += 1
             print("\rSending Packets " + str(number), end="")
             time.sleep(3)
     except KeyboardInterrupt:
         print("\n\nEverything is being restored to its former state.")
+        """
         reset_operation(targetIP, poisonIP)
         reset_operation(poisonIP, targetIP)
+        """
+        reset_operation(user_target_ip,user_gateway_ip)
+        reset_operation(user_gateway_ip,user_target_ip)
         print("Exiting.")
         time.sleep(3)
     finally:
