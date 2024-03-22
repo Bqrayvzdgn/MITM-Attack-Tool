@@ -58,7 +58,7 @@ if __name__ == "__main__":
             arp_poisoning(user_gateway_ip, user_target_ip)
             number += 1
             print(f"\n\rPackages are being sent from address {user_target_ip} to address {user_gateway_ip} ==> " + f"Number of packages {str(number)}", end="")
-            time.sleep(2)
+            time.sleep(1)
     except KeyboardInterrupt:
         print("\n\nEverything is being restored to its former state.")
         reset_operation(user_target_ip, user_gateway_ip)
