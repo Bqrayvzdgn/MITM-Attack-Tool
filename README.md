@@ -4,15 +4,16 @@
 ### Download :
 ```shell
 sudo su
-git clone https://github.com/Bqrayvzdgn/MITM-Attack-Tool
-cd ./MITM-Attack-Tool
-python mitm-attacker.py
+git clone https://github.com/Bqrayvzdgn/MITM-Attacker.git
+cd ./MITM-Attacker
+python mitm-attacker.py -h
 ```
 
 ### Usage :
 ```shell
 sudo su
 python mitm-attacker.py
-Enter the Target IP: [Target IP]
-Enter the IP to poison (Modem, Router): [Gateway IP]
+python mitm-attacker.py --target [Target IP] --gateway [Gateway IP]
+OR
+python mitm-attacker.py -t [Target IP] --g [Gateway IP]
 ```
