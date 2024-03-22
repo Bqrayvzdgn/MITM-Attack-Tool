@@ -12,7 +12,6 @@ python mitm-attacker.py -h
 ### Usage :
 ```shell
 sudo su
-python mitm-attacker.py
 python mitm-attacker.py --target [Target IP] --gateway [Gateway IP]
 OR
 python mitm-attacker.py -t [Target IP] -g [Gateway IP]
